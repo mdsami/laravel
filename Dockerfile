@@ -24,6 +24,11 @@ ENTRYPOINT [ "/root/mongo-installer.sh" ]
 CMD [ "mongod", "--bind_ip", "0.0.0.0" ]
 
 
+FROM alpine
+RUN apk --no-cache add nginx
+COPY nginx.conf /etc/nginx/
+RUN mkdir -p /run/nginx
+CMD ["nginx"]
 
 
 # Download and install NodeJS
