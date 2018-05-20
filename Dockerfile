@@ -34,7 +34,7 @@ CMD ["nginx"]
 # Download and install NodeJS
 
 ENV NODE_VERSION 10.0.0
-ADD node-installer.sh /usr/sbin/install-node.sh
+ADD node-installer.sh /usr/sbin/node-installer.sh
 RUN /usr/sbin/node-installer.sh
 RUN npm i -g yarn
 
