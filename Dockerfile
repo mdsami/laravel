@@ -33,9 +33,9 @@ CMD ["nginx"]
 
 # Download and install NodeJS
 
-ENV NODE_VERSION 10.1.0
-ADD node-installer.sh /usr/sbin/node-installer.sh
-RUN /usr/sbin/node-installer.sh
+
+RUN \
+apk update && apk add nodejs
 RUN npm i -g yarn
 
 RUN mkdir -p /etc/ssl/certs && update-ca-certificates
